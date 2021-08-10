@@ -1,39 +1,22 @@
 -- PART 1
-DROP TABLE IF EXISTS orders;
+INSERT INTO artist (artist_id, name)
+VALUES ( 276, 'Pure Reason Revolution');
 
-CREATE TABLE orders (
-    order_id SERIAL,
-    person_id INTEGER,
-    product_name VARCHAR(200),
-    product_price NUMERIC,
-    quantity INTEGER
-);
+INSERT INTO artist (artist_id, name)
+VALUES ( 277, 'Coheed and Cambria');
+
+INSERT INTO artist (artist_id, name)
+VALUES ( 278, 'Thank You Scientist');
+
 
 -- PART 2
-INSERT INTO orders (person_id, product_name, product_price, quantity)
-VALUES ( 1, 'Magic Sponge', 39.95, 5);
-
-INSERT INTO orders (person_id, product_name, product_price, quantity)
-VALUES ( 2, 'Anti-Magic Sponge', 49.99, 4);
-
-INSERT INTO orders (person_id, product_name, product_price, quantity)
-VALUES ( 2, 'Anti-Magic Sponge', 49.99, 20);
-
-INSERT INTO orders (person_id, product_name, product_price, quantity)
-VALUES ( 1, 'Magic Sponge', 39.95, 50);
-
-INSERT INTO orders (person_id, product_name, product_price, quantity)
-VALUES ( 3, 'Sponge', 2.99, 1);
+SELECT * FROM artist ORDER BY name DESC LIMIT 10;
 
 -- PART 3
-SELECT * FROM orders;
+SELECT * FROM artist ORDER BY name LIMIT 5;
 
 -- PART 4
-SELECT SUM(quantity) FROM orders;
+SELECT * FROM artist WHERE name LIKE 'Black%';
 
 -- PART 5
-SELECT SUM(product_price * quantity) FROM orders;
-
--- PART 6
-SELECT SUM(product_price * quantity) FROM orders
-WHERE person_id = 1;
+SELECT * FROM artist WHERE name LIKE '%Black%';
