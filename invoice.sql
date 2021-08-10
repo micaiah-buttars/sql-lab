@@ -21,3 +21,12 @@ SELECT AVG(total) FROM invoice;
 
 -- PART 8
 SELECT SUM(total) FROM invoice;
+
+-- PART 9
+UPDATE invoice
+SET total = 26
+WHERE invoice_id = 5;
+
+-- PART 10
+DELETE FROM invoice_line WHERE invoice_id = 1;
+DELETE FROM invoice WHERE invoice_id = 1;
